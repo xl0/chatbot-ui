@@ -93,7 +93,7 @@ export const MessageCodeBlock: FC<MessageCodeBlockProps> = memo(
             <Button
               variant="ghost"
               size="icon"
-              className="hover:bg-zinc-800 focus-visible:ring-1 focus-visible:ring-slate-700 focus-visible:ring-offset-0"
+              className="size-5 hover:bg-zinc-800 focus-visible:ring-1 focus-visible:ring-slate-700 focus-visible:ring-offset-0"
               onClick={downloadAsFile}
             >
               <IconDownload size={16} />
@@ -102,7 +102,7 @@ export const MessageCodeBlock: FC<MessageCodeBlockProps> = memo(
             <Button
               variant="ghost"
               size="icon"
-              className="text-xs hover:bg-zinc-800 focus-visible:ring-1 focus-visible:ring-slate-700 focus-visible:ring-offset-0"
+              className="size-5 text-xs hover:bg-zinc-800 focus-visible:ring-1 focus-visible:ring-slate-700 focus-visible:ring-offset-0"
               onClick={onCopy}
             >
               {isCopied ? <IconCheck size={16} /> : <IconCopy size={16} />}

@@ -1,5 +1,6 @@
 import { FC, memo } from "react"
 import ReactMarkdown, { Options } from "react-markdown"
+import remarkBreaks from "remark-breaks"
 
 export const MessageMarkdownMemoized: FC<Options> = memo(
   ReactMarkdown,

@@ -189,8 +189,8 @@ export const Message: FC<MessageProps> = ({
       onMouseLeave={() => setIsHovering(false)}
       onKeyDown={handleKeyDown}
     >
-      <div className="relative flex w-full flex-col p-6 sm:w-[550px] sm:px-0 md:w-[650px] lg:w-[650px] xl:w-[700px]">
-        <div className="absolute right-5 top-7 sm:right-0">
+      <div className="relative flex w-full flex-col py-2">
+        <div className="absolute bottom-1 right-7">
           <MessageActions
             onCopy={handleCopy}
             onEdit={handleStartEdit}
@@ -201,7 +201,7 @@ export const Message: FC<MessageProps> = ({
             onRegenerate={handleRegenerate}
           />
         </div>
-        <div className="space-y-3">
+        <div className="flex items-start">
           {message.role === "system" ? (
             <div className="flex items-center space-x-4">
               <IconPencil
@@ -212,7 +212,7 @@ export const Message: FC<MessageProps> = ({
               <div className="text-lg font-semibold">Prompt</div>
             </div>
           ) : (
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center px-3">
               {message.role === "assistant" ? (
                 messageAssistantImage ? (
                   <Image
@@ -253,7 +253,7 @@ export const Message: FC<MessageProps> = ({
                 />
               )}
 
-              <div className="font-semibold">
+              {/* <div className="font-semibold">
                 {message.role === "assistant"
                   ? message.assistant_id
                     ? assistants.find(
@@ -263,7 +263,7 @@ export const Message: FC<MessageProps> = ({
                       ? selectedAssistant?.name
                       : MODEL_DATA?.modelName
                   : profile?.display_name ?? profile?.username}
-              </div>
+              </div> */}
             </div>
           )}
           {!firstTokenReceived &&

@@ -68,8 +68,20 @@ export const Dashboard: FC<DashboardProps> = ({ children }) => {
   }
 
   return (
-    <div className="flex size-full">
+    <div className="relative flex size-full">
       <CommandK />
+      <Button
+        className={cn("absolute z-10 m-3 size-[32px] cursor-pointer")}
+        style={{
+          // marginLeft: showSidebar ? `${SIDEBAR_WIDTH}px` : "0px",
+          transform: showSidebar ? "rotate(180deg)" : "rotate(0deg)"
+        }}
+        variant="ghost"
+        size="icon"
+        onClick={handleToggleSidebar}
+      >
+        <IconChevronCompactRight size={28} />
+      </Button>
 
       <div
         className={cn(
@@ -99,7 +111,7 @@ export const Dashboard: FC<DashboardProps> = ({ children }) => {
       </div>
 
       <div
-        className="bg-muted/50 relative flex w-screen min-w-[90%] grow flex-col sm:min-w-fit"
+        className="bg-muted/50 grow flex-col"
         onDrop={onFileDrop}
         onDragOver={onDragOver}
         onDragEnter={handleDragEnter}
@@ -112,21 +124,6 @@ export const Dashboard: FC<DashboardProps> = ({ children }) => {
         ) : (
           children
         )}
-
-        <Button
-          className={cn(
-            "absolute left-[4px] top-[50%] z-10 size-[32px] cursor-pointer"
-          )}
-          style={{
-            // marginLeft: showSidebar ? `${SIDEBAR_WIDTH}px` : "0px",
-            transform: showSidebar ? "rotate(180deg)" : "rotate(0deg)"
-          }}
-          variant="ghost"
-          size="icon"
-          onClick={handleToggleSidebar}
-        >
-          <IconChevronCompactRight size={24} />
-        </Button>
       </div>
     </div>
   )
